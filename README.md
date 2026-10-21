@@ -31,7 +31,7 @@ The resulting rules are used to synthesize a runtime monitor deployed after the 
 
 ## DeepSORT Tracking Module
 
-This module implements a customized DeepSORT-based multi-object tracking pipeline for surgical tool tracking in laparoscopic cholecystectomy videos. It combines YOLOv10x detection with appearance-based re-identification and temporal smoothing to produce stable, identity-consistent tool tracks across video frames.
+This module implements a customized DeepSORT-based multi-object tracking pipeline for surgical tool tracking in laparoscopic cholecystectomy videos. It combines YOLOv12x detection with appearance-based re-identification and temporal smoothing to produce stable, identity-consistent tool tracks across video frames.
 
 ### Tracked Surgical Tools
 
