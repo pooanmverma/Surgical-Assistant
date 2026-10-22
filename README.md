@@ -13,7 +13,9 @@ This system provides real-time formal safety monitoring for laparoscopic cholecy
 
 The system processes sequential endoscopic video frames using a YOLOv12-x detector. For each frame, the detector identifies surgical instruments, estimates their spatial locations, and outputs the tool class, bounding box, and confidence score. The resulting detections form the input to the tracking stage.
 
+## YOLOv12-X: Input-to-Output Pipeline
 
+[![YOLOv12-X Input-to-Output Pipeline](image/yoloinputtooutput.png)](image/yoloinputtooutput.png)
 
 
 
