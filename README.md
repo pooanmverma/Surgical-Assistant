@@ -21,7 +21,7 @@ The system processes sequential endoscopic video frames using a YOLOv12-x detect
 
 YOLOv12-x processes frames independently and does not maintain persistent tool identities across frames. Moreover, missed detections may falsely indicate tool absence, leading to incorrect safety violations. The DeepSORT LogicAdapter addresses these issues by associating detections across consecutive frames, maintaining persistent tool trajectories, and handling short-term detection gaps. This prevents transient detection failures from propagating as false tool absences to subsequent pipeline stages.
 
-[![DeepSORT Architecture](images/deepsort.png)](images/deepsort.png)
+[![DeepSORT Architecture](image/deepsort.png)](image/deepsort.png)
 
 The output is a set of persistent tracks, each containing a track ID, tool class, tool name, bounding box, confidence, and a reported state. The reported state is determined by exponential moving-average smoothing with hysteresis thresholds, so that a track is only reported as present once its score exceeds an upper threshold and only cleared once it falls below a lower one.
 
