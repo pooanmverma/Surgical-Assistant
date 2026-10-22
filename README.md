@@ -37,8 +37,9 @@ The tracking pipeline consists of the following components:
 
 The DeepSORTLogicAdapter applies Exponential Moving Average (EMA)-based smoothing with hysteresis thresholds to stabilize tool-presence predictions. When a track's EMA confidence exceeds the upper threshold, its reported state becomes True, indicating reliable tool presence. If the tool temporarily disappears for a few frames but the EMA confidence remains above the lower threshold, the reported state stays True — preventing brief occlusions from triggering false tool-absence signals. The reported state is cleared only when the EMA confidence falls below the lower threshold.
 
-**Example:**### EMA-Based Confidence Smoothing: Frame-by-Frame Example
+The resulting tracking output for each active track contains the track ID, tool class, tool name, bounding box, confidence score, and smoothed reported state. These outputs are passed to the subsequent post-tracking preprocessing stage before formal runtime safety verification.
 
+**Example:**### 
 The following table illustrates how EMA confidence, presence and absence counts, and hysteresis conditions determine the reported tool-presence state across consecutive frames.
 
 | Frame | Conf. | EMA | Presence Count | Absent Count | Cur State | Condition | Reported |
@@ -67,7 +68,6 @@ DeepSORT output: [F, T, T, T, T, T, T, T, T, T, T, T, T, T, F, F]
 **Interpretation:** The tool is initially reported as absent. After detection, its presence is established and remains stable while confidence is high. During temporary occlusion (Frames 14–16), the EMA confidence decreases. At Frame 14, the reported state remains `T` because the EMA is above the lower threshold. At Frame 15, the EMA falls below 0.35, causing the reported state to become `F`. By Frame 16, the absence count also exceeds the allowed limit of two frames.
 
 
-The resulting tracking output for each active track contains the track ID, tool class, tool name, bounding box, confidence score, and smoothed reported state. These outputs are passed to the subsequent post-tracking preprocessing stage before formal runtime safety verification.
 
 ## DeepSORT Architecture and Tracking
 
