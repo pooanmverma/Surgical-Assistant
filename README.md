@@ -25,6 +25,7 @@ YOLOv12-x processes frames independently and does not maintain persistent tool i
 
 [![DeepSORT Architecture](image/deepsort.png)](image/deepsort.png)
 
+[![DeepSORT Architecture](image/deepsortkeptframe.png)](image/deepsortkeptframe.png)
 The output is a set of persistent tracks, each containing a track ID, tool class, tool name, bounding box, confidence, and a reported state. The reported state is determined by exponential moving-average smoothing with hysteresis thresholds, so that a track is only reported as present once its score exceeds an upper threshold and only cleared once it falls below a lower one.
 
 
