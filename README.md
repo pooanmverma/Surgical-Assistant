@@ -40,7 +40,7 @@ YOLOv12-x processes frames independently and does not maintain persistent tool i
       </a>
       <br/>
      
-    </td>
+    
   </tr>
 </table>
 
