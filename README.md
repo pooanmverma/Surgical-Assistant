@@ -15,7 +15,7 @@ The system processes sequential endoscopic video frames using a YOLOv12-x detect
 
 <p align="center">
   <a href="image/yoloinputtooutput.png">
-    <img src="image/yoloinputtooutput.png" alt="YOLOv12-X Input-to-Output Pipeline" width="800"/>
+    <img src="image/yoloinputtooutput.png" alt="YOLOv12-X Input-to-Output Pipeline" width="1000"/>
   </a>
 </p>
 
