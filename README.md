@@ -90,8 +90,6 @@ DeepSORT output: [F, T, T, T, T, T, T, T, T, T, T, T, T, T, F, F]
   </tr>
 </table>
 
-**6. Output:**
-Each frame produces a list of active tracks, each containing a unique persistent ID, stabilized tool name, bounding box, confidence score, and a flag indicating whether the tool is reliably present.
 
 
 
