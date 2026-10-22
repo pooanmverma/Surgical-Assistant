@@ -23,6 +23,12 @@ The output is a set of persistent tracks, each containing a track ID, tool class
 
 Since multiple tracks may represent the same physical tool over time, the per-track reported flags are aggregated at the tool-class level — a class is marked active if any of its tracks is reported. The resulting binary signals are smoothed over a sliding window, and a class is passed to the formal monitor as active only when its active-frame fraction meets the class-specific threshold. This step reduces transient fluctuations and provides consistent binary tool-presence signals.
 
+Example: Consider a Bipolar detected for 13 consecutive frames, followed by a four-frame occlusion during which the tracker reports no detection for that tool. At the fourth occluded frame, the 12-frame window contains eight active frames and four inactive frames, giving an active-frame fraction of (8/12 \approx 0.67). Since this exceeds the Bipolar threshold of 0.6, the smoothed output remains (T_2 = 1), preventing the temporary occlusion from being interpreted as tool absence.
+
+For the Irrigator, the same active-frame fraction is below its threshold of 0.9, so the smoothed output becomes (T_7 = 0).
+
+The resulting Boolean signals are then passed to the formal runtime monitor for verification of surgical tool usage sequences and temporal constraints
+
 ### 4. Formal Runtime Monitoring
 
 An offline process extracts safety rules in Signal Temporal Logic (STL) from expert surgical recordings, complemented by clinical guidelines manually formalized by expert surgeons. These rules specify safety constraints such as permitted tool-use sequences and duration limits.
