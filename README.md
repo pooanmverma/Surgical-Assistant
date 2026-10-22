@@ -36,10 +36,10 @@ YOLOv12-x processes frames independently and does not maintain persistent tool i
     </td>
     <td align="center" width="60%">
       <a href="image/deepsortkeptframe.png">
-        <img src="image/deepsortkeptframe.png" alt="DeepSORT Kept Frames" width="100%" height="350"/>
+        <img src="image/deepsortkeptframe.png" alt="DeepSORT Kept Frames" width="100%" height="650"/>
       </a>
       <br/>
-      <b>DeepSORT Kept Frames</b>
+     
     </td>
   </tr>
 </table>
