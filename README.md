@@ -82,7 +82,7 @@ DeepSORT output: [F, T, T, T, T, T, T, T, T, T, T, T, T, T, F, F]
     </td>
     <td align="center" width="60%">
       <a href="image/deepsortkeptframe.png">
-        <img src="image/deepsortkeptframe.png" alt="DeepSORT Kept Frames" width="100%" height="650"/>
+        <img src="image/deepsortkeptframe.png" alt="DeepSORT Kept Frames" width="100%" height="350"/>
       </a>
       <br/>
      
