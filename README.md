@@ -25,16 +25,18 @@ YOLOv12-x processes frames independently and does not maintain persistent tool i
 
 ## DeepSORT Architecture and Tracking
 
+## DeepSORT Architecture and Tracking
+
 <table>
   <tr>
-    <td align="center" width="50%">
+    <td align="center" width="40%">
       <a href="image/deepsort.png">
         <img src="image/deepsort.png" alt="DeepSORT Architecture" width="100%"/>
       </a>
       <br/>
       <b>DeepSORT Architecture</b>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="60%">
       <a href="image/deepsortkeptframe.png">
         <img src="image/deepsortkeptframe.png" alt="DeepSORT Kept Frames" width="100%"/>
       </a>
@@ -43,6 +45,7 @@ YOLOv12-x processes frames independently and does not maintain persistent tool i
     </td>
   </tr>
 </table>
+
 
 The output is a set of persistent tracks, each containing a track ID, tool class, tool name, bounding box, confidence, and a reported state. The reported state is determined by exponential moving-average smoothing with hysteresis thresholds, so that a track is only reported as present once its score exceeds an upper threshold and only cleared once it falls below a lower one.
 
