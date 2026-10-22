@@ -21,7 +21,26 @@ The system processes sequential endoscopic video frames using a YOLOv12-x detect
 
 ### 2. Tracking and Re-Identification (DeepSORT LogicAdapter)
 
-YOLOv12-x processes frames independently and does not maintain persistent tool identities across frames. Moreover, missed detections may falsely indicate tool absence, leading to incorrect safety violations. The DeepSORT LogicAdapter addresses these issues by associating detections across consecutive frames, maintaining persistent tool trajectories, and handling short-term detection gaps. This prevents transient detection failures from propagating as false tool absences to subsequent pipeline stages.
+### 2. DeepSORTLogicAdapter: Tracking and Re-identification
+
+YOLOv12-X processes each video frame independently and does not maintain persistent identities for detected surgical tools. Moreover, missed detections can incorrectly indicate tool absence and potentially trigger false safety violations. To address these limitations, the DeepSORTLogicAdapter associates detections across consecutive frames, maintains persistent tool trajectories, and handles short-term detection gaps.
+
+The tracking pipeline consists of the following components:
+
+- **Detection Preprocessing:** Filters YOLOv12-X detections based on confidence and bounding-box criteria.
+- **Appearance Representation:** Extracts normalized 1280-dimensional appearance embeddings using a pretrained MobileNetV2 feature extractor.
+- **Motion Prediction:** Estimates the expected positions of tracked tools using two-point linear extrapolation.
+- **Data Association:** Combines cosine appearance distance and bounding-box Intersection over Union (IoU) to construct a hybrid association cost. Hungarian assignment determines the detection-to-track correspondences.
+- **Track Management:** Updates matched tracks and initializes new tracks for unmatched detections.
+- **Re-identification:** Recovers previously lost tracks using tool-class consistency and appearance similarity, while removing tracks that exceed the configured age limit.
+
+#### EMA-Based Confidence Smoothing
+
+The DeepSORTLogicAdapter applies Exponential Moving Average (EMA)-based smoothing with hysteresis thresholds to stabilize tool-presence predictions. When a track's EMA confidence exceeds the upper threshold, its reported state becomes True, indicating reliable tool presence. If the tool temporarily disappears for a few frames but the EMA confidence remains above the lower threshold, the reported state stays True — preventing brief occlusions from triggering false tool-absence signals. The reported state is cleared only when the EMA confidence falls below the lower threshold.
+
+**Example:** Consider a Grasper track's reported states over seven consecutive frames: [T, F, F, T, F, T, T]. Here, T indicates the tool is reported as present and F as absent. The brief absences in frames 2, 3, and 5 result from momentary detection failures, while the EMA smoothing ensures that only sustained absences affect downstream processing.
+
+The resulting tracking output for each active track contains the track ID, tool class, tool name, bounding box, confidence score, and smoothed reported state. These outputs are passed to the subsequent post-tracking preprocessing stage before formal runtime safety verification.
 
 ## DeepSORT Architecture and Tracking
 
