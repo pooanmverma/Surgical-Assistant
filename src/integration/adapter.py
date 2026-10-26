@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("DeepSORTLogicAdapter")
 
-DEFAULT_MODEL = './runs/official_detect/yolov10x_official_split_baseline_new2/weights/best.pt'
+DEFAULT_MODEL = './runs/official_detect/yolov12x_official_split_baseline_new2/weights/best.pt'
 DEFAULT_CONF_THRESHOLD = 0.4
 DEFAULT_REID_BACKBONE = 'mobilenet_v2'
 
