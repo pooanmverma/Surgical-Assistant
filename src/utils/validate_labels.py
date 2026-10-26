@@ -10,8 +10,7 @@ Checks:
  - class index is in [0, nc-1]
  - coordinates are floats in [0,1]
 
-Usage:
-  python3 validate_labels.py --dir ./keras_frcnn/dataset/JPEGImages_train --nc 7
+
 """
 import argparse
 from pathlib import Path
