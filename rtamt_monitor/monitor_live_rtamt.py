@@ -37,8 +37,8 @@ from collections import deque
 import cv2
 import numpy as np
 
-PROJECT_ROOT = pathlib.Path("/scratch/sp/Rustam/Surgical-Tool-Detection_from_ova")
-RTAMT_HOME = pathlib.Path("/scratch/sp/Rustam/rtamt_framework")
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+RTAMT_HOME = pathlib.Path(__file__).resolve().parent
 
 # Adapter settings: identical to main_c_integration.py.
 CONF_THRESHOLD = 0.4
@@ -63,11 +63,11 @@ def parse_args():
                    help="detector checkpoint (default: YOLOv12-X official-split best.pt)")
     p.add_argument("--video", type=pathlib.Path, default=None)
     p.add_argument("--output", type=pathlib.Path,
-                   default=RTAMT_HOME / "tests/rtamt_results_video20.csv")  
+                   default=PROJECT_ROOT / "rtamt_results_video20.csv")
     p.add_argument("--rtamt-python", type=pathlib.Path,
-                   default=RTAMT_HOME / "rtamt_env/bin/python")
+                   default=pathlib.Path(sys.executable))
     p.add_argument("--worker", type=pathlib.Path, 
-                   default=RTAMT_HOME / "tests/rtamt_stream_worker.py")
+                   default=RTAMT_HOME / "rtamt_stream_worker.py")
     p.add_argument("--rules", type=pathlib.Path, default=None,
                    help="mined constraints JSON (default: the worker's default)")
     p.add_argument("--no-rtamt", action="store_true", help="native MutEx evaluation in the worker")
@@ -81,7 +81,7 @@ def parse_args():
     if args.model is None:
         args.model = root / "runs/official_detect/yolo12x_official_split_baseline_600ep/weights/best.pt"
     if args.video is None:  
-        args.video = root / "/scratch/sp/Rustam/Surgical-Tool-Detection_from_ova/m2cai16-tool/test_dataset/tool_video_11.mp4"
+        args.video = root / "m2cai16-tool/test_dataset/tool_video_11.mp4"
     return args
 
 

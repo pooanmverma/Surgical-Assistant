@@ -17,7 +17,7 @@ spec or the frame conversion is wrong.
 
 Run with the RTAMT interpreter (no GPU, no OpenCV needed):
 
-  /scratch/sp/Rustam/rtamt_framework/rtamt_env/bin/python \
+  python3 \
       xcheck_response_backend.py RUNNER.csv \
       --rules merged_constraints_mutex_only.json --dedupe max
 

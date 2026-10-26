@@ -40,8 +40,8 @@ from collections import deque
 import cv2
 import numpy as np
 
-PROJECT_ROOT = pathlib.Path("/scratch/sp/Rustam/Surgical-Tool-Detection_from_ova")
-RTAMT_HOME = pathlib.Path("/scratch/sp/Rustam/rtamt_framework")
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+RTAMT_HOME = pathlib.Path(__file__).resolve().parent
 
 # Videos to process, in order.
 VIDEO_NUMBERS = [11, 12, 13, 14, 15]
@@ -70,7 +70,7 @@ def parse_args():
     p.add_argument("--output-dir", type=pathlib.Path, default=RTAMT_HOME / "tests",
                    help="directory for per-video CSV and summary files")
     p.add_argument("--rtamt-python", type=pathlib.Path,
-                   default=RTAMT_HOME / "rtamt_env/bin/python")
+                   default=pathlib.Path(sys.executable))
     p.add_argument("--worker", type=pathlib.Path,
                    default=RTAMT_HOME / "tests/rtamt_stream_worker.py")
     p.add_argument("--rules", type=pathlib.Path, default=None,

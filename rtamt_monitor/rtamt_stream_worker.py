@@ -43,9 +43,8 @@ except ImportError:  # pragma: no cover
     rtamt = None
 
 
-DEFAULT_RULES_FILE = (
-    "/scratch/sp/Rustam/Surgical-Tool-Detection_from_ova/"
-    "merged_constraints.json12"
+DEFAULT_RULES_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "merged_constraints_mutex_only.json"
 )
 NUM_TOOLS = 7
 EPS = 1e-9
