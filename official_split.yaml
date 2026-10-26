@@ -1,0 +1,13 @@
+path: keras_frcnn/dataset
+train: JPEGImages_train_official
+val: JPEGImages_val_official
+test: JPEGImages_test_official
+nc: 7
+names:
+- Grasper
+- Bipolar
+- Hook
+- Scissors
+- Clipper
+- Irrigator
+- SpecimenBag

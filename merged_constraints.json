@@ -1,0 +1,270 @@
+[
+    {
+        "name": "MutEx_tool_1_tool_2",
+        "description": "Bipolar and Hook cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_1_tool_3",
+        "description": "Bipolar and Scissors cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_1_tool_4",
+        "description": "Bipolar and Clipper cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_2_tool_3",
+        "description": "Hook and Scissors cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_2_tool_4",
+        "description": "Hook and Clipper cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "CoActivation_tool_3_tool_0",
+        "description": "If Scissors is active, Grasper must be present with confidence > 0.90",
+        "parameters": {
+            "confidence": 0.9
+        },
+        "robustness": 0.09999999999999998
+    },
+    {
+        "name": "Response_tool_3_tool_0",
+        "description": "If Scissors occurs, Grasper must follow within 0.50s",
+        "parameters": {
+            "deadline": 0.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_3_tool_4",
+        "description": "Scissors and Clipper cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_3_tool_6",
+        "description": "Scissors and Bag cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_4_tool_0",
+        "description": "If Clipper occurs, Grasper must follow within 22.50s",
+        "parameters": {
+            "deadline": 22.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_4_tool_6",
+        "description": "Clipper and Bag cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_0_tool_3",
+        "description": "Grasper and Scissors cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_2_tool_6",
+        "description": "Hook and Bag cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_3_tool_5",
+        "description": "Scissors and Irrigator cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_4_tool_5",
+        "description": "Clipper and Irrigator cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_1_tool_5",
+        "description": "Bipolar and Irrigator cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_1_tool_6",
+        "description": "Bipolar and Bag cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_4_tool_0",
+        "description": "If Clipper occurs, Grasper must follow within 29.50s",
+        "parameters": {
+            "deadline": 29.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_1_tool_0",
+        "description": "If Bipolar occurs, Grasper must follow within 0.50s",
+        "parameters": {
+            "deadline": 0.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_1_tool_6",
+        "description": "If Bipolar occurs, Bag must follow within 8.00s",
+        "parameters": {
+            "deadline": 8.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_2_tool_5",
+        "description": "Hook and Irrigator cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_5_tool_6",
+        "description": "Irrigator and Bag cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_4_tool_0",
+        "description": "If Clipper occurs, Grasper must follow within 28.50s",
+        "parameters": {
+            "deadline": 28.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_0_tool_1",
+        "description": "Grasper and Bipolar cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_1_tool_6",
+        "description": "If Bipolar occurs, Bag must follow within 1.50s",
+        "parameters": {
+            "deadline": 1.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_3_tool_0",
+        "description": "If Scissors occurs, Grasper must follow within 26.50s",
+        "parameters": {
+            "deadline": 26.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_1_tool_0",
+        "description": "If Bipolar occurs, Grasper must follow within 23.00s",
+        "parameters": {
+            "deadline": 23.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_4_tool_0",
+        "description": "If Clipper occurs, Grasper must follow within 15.50s",
+        "parameters": {
+            "deadline": 15.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_3_tool_0",
+        "description": "If Scissors occurs, Grasper must follow within 24.00s",
+        "parameters": {
+            "deadline": 24.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_4_tool_0",
+        "description": "If Clipper occurs, Grasper must follow within 27.00s",
+        "parameters": {
+            "deadline": 27.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_3_tool_0",
+        "description": "If Scissors occurs, Grasper must follow within 27.50s",
+        "parameters": {
+            "deadline": 27.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_6_tool_0",
+        "description": "If Bag occurs, Grasper must follow within 2.00s",
+        "parameters": {
+            "deadline": 2.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "MutEx_tool_0_tool_4",
+        "description": "Grasper and Clipper cannot be used simultaneously.",
+        "parameters": {},
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_1_tool_0",
+        "description": "If Bipolar occurs, Grasper must follow within 7.00s",
+        "parameters": {
+            "deadline": 7.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "CoActivation_tool_1_tool_6",
+        "description": "If Bipolar is active, Bag must be present with confidence > 0.90",
+        "parameters": {
+            "confidence": 0.9
+        },
+        "robustness": 0.09999999999999998
+    },
+    {
+        "name": "Response_tool_1_tool_6",
+        "description": "If Bipolar occurs, Bag must follow within 0.50s",
+        "parameters": {
+            "deadline": 0.5
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_3_tool_2",
+        "description": "If Scissors occurs, Hook must follow within 22.00s",
+        "parameters": {
+            "deadline": 22.0
+        },
+        "robustness": 0.5
+    },
+    {
+        "name": "Response_tool_6_tool_0",
+        "description": "If Bag occurs, Grasper must follow within 14.50s",
+        "parameters": {
+            "deadline": 14.5
+        },
+        "robustness": 0.5
+    }
+]
