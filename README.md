@@ -148,7 +148,7 @@ A 12-frame sliding window is applied to the class-level presence sequence to red
 
 At Frame 16, the sliding window contains 10 active frames and two inactive frames, giving an active-frame fraction of \(10/12 \approx 0.833\).
 
-- **Bipolar:** \(0.833 \geq 0.6\), so the output remains active (\(T_2 = 1\)). The temporary absence is tolerated.
+- **Bipolar:** \(0.833 \ 0.6\), so the output remains active (\(T_2 = 1\)). The temporary absence is tolerated.
 - **Irrigator:** \(0.833 < 0.9\), so the output becomes inactive (\(T_7 = 0\)). The stricter threshold rejects the same active-frame fraction.
 
 The resulting class-level Boolean signals, \(T_2\) and \(T_7\), are passed to the formal runtime monitor for verification of surgical tool usage sequences and temporal constraints.
