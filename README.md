@@ -135,14 +135,13 @@ The resulting class-level presence sequence is:
 #### Step 2: Sliding-Window Temporal Smoothing
 
 A 12-frame sliding window is applied to the class-level presence sequence to reduce the effect of temporary detection gaps. For each frame, the active-frame fraction is calculated as the number of active frames (`T`) divided by the window size (12). Class-specific thresholds are then applied: 0.6 for Bipolar and 0.9 for Irrigator.
-
 | Frame | Window (last 12 frames) | Active Frames | Fraction | Bipolar (≥ 0.6) |
-|---:|---|:---:|---:|:---:|:---:|
+|---:|---|:---:|---:|:---:|
 | 12 | F,T,T,T,T,T,T,T,T,T,T,T | 11/12 | 0.917 | **1** |
-| 13 | T,T,T,T,T,T,T,T,T,T,T,T | 12/12 | 1.000 | **1** | 
-| 14 | T,T,T,T,T,T,T,T,T,T,T,T | 12/12 | 1.000 | **1** | 
-| 15 | T,T,T,T,T,T,T,T,T,T,T,F | 11/12 | 0.917 | **1** | 
-| 16 | T,T,T,T,T,T,T,T,T,T,F,F | 10/12 | 0.833 | **1** | 
+| 13 | T,T,T,T,T,T,T,T,T,T,T,T | 12/12 | 1.000 | **1** |
+| 14 | T,T,T,T,T,T,T,T,T,T,T,T | 12/12 | 1.000 | **1** |
+| 15 | T,T,T,T,T,T,T,T,T,T,T,F | 11/12 | 0.917 | **1** |
+| 16 | T,T,T,T,T,T,T,T,T,T,F,F | 10/12 | 0.833 | **1** |
 
 #### Key Observation: Frame 16
 
